@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EasyChat Room</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="join" class="screen">
+  <div class="card">
+    <h1>💬 EasyChat</h1>
+    <p class="sub">Chat with anyone. Get AI help writing your replies.</p>
+    <label>Your name</label>
+    <input id="name" maxlength="20" placeholder="e.g. Ram" autocomplete="off">
+    <label>Room code</label>
+    <input id="code" maxlength="32" placeholder="Type any code, e.g. blue-tiger" autocomplete="off">
+    <p class="hint">Share the same code with a friend. When they type it too, you can chat.</p>
+    <button id="enter" class="primary">Join room</button>
+    <div id="joinerr" class="err"></div>
+  </div>
+</div>
+
+<div id="chat" class="screen" hidden>
+  <header>
+    <button id="leave" class="ghost">←</button>
+    <div><b>Room: <span id="roomcode"></span></b><small id="online"></small></div>
+  </header>
+  <div id="msgs"></div>
+  <div class="bar"><input id="inp" placeholder="Type a message…" autocomplete="off"><button id="snd" class="primary">Send</button></div>
+</div>
+
+<div id="sheet" hidden><div class="panel">
+  <h3>✨ AI reply preview</h3>
+  <div><div class="lbl">Replying to</div><div class="orig" id="orig"></div></div>
+  <div class="chips"><button class="chip sel" data-t="friendly">Friendly</button><button class="chip" data-t="formal">Formal</button></div>
+  <div><div class="lbl">This message will be sent:</div><div class="draft" id="draft"></div></div>
+  <div class="row"><button id="regen">↻ Another</button><button id="cancel">Cancel</button><button class="primary" id="confirm">Confirm &amp; Send</button></div>
+</div></div>
+<script src="app.js"></script>
+</body>
+</html>
